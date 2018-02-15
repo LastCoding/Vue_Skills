@@ -6,8 +6,6 @@
                 <input type="text" placeholder="Enter a skill you have.." v-model="skill">
             </form>
 
-            <input type="checkbox" id="checkbox" v-model="checked">
-
             <ul>
                 <li v-for="(data, index) in skills" :key="index">{{ data.skill }}</li>
             </ul>
@@ -22,7 +20,6 @@
         name: 'Skills',
         data() {
             return {
-                checked: false,
                 skill: '',
                 skills: [
                     {"skill": "Vue.js"},
@@ -34,7 +31,6 @@
             addSkill() {
                 this.skills.push({skill: this.skill})
                 this.skill = '';
-                console.log('This checkbox value is:' + this.checked);
             }
         }
     }
