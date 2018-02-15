@@ -11,7 +11,9 @@
             </form>
 
             <ul>
+                <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
                 <li v-for="(data, index) in skills" :key="index">{{ data.skill }}</li>
+                </transition-group>
             </ul>
 
             <p>These are the skills that you possess.</p>
