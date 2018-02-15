@@ -2,6 +2,9 @@
     <div class="hello">
         <div class="holder">
 
+            <form @submit.prevent="addSkill">
+                <input type="text" placeholder="Enter a skill you have.." v-model="skill">
+            </form>
             <ul>
                 <li v-for="(data, index) in skills" :key="index">{{ data.skill }}</li>
             </ul>
@@ -16,13 +19,17 @@
         name: 'Skills',
         data() {
             return {
+                skill: '',
                 skills: [
                     {"skill": "Vue.js"},
                     {"skill": "Frotend Developer"}
-                ],
-                bgColor: 'yellow',
-                bgWidth: '100%',
-                bgHeight: '30px'
+                ]
+            }
+        },
+        methods: {
+            addSkill() {
+                this.skills.push({skill: this.skill})
+                this.skill = '';
             }
         }
     }
@@ -57,6 +64,15 @@
 
     .container {
         box-shadow: 0px 0px 40px lightgray;
+    }
+
+    input {
+        width: calc(100% - 40px);
+        border: 0;
+        padding: 20px;
+        font-size: 1.3em;
+        background-color: #323333;
+        color: #687F7F;
     }
 
 </style>
