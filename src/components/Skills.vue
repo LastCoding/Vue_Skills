@@ -5,6 +5,7 @@
                 <li v-for="(data, index) in skills" :key="index">{{ index }}. {{ data.skill }}</li>
             </ul>
 
+            <div v-bind:class="{ alert: showAlert, 'another-class': showClass }"></div>
         </div>
     </div>
 </template>
@@ -15,9 +16,11 @@
         data() {
             return {
                 skills: [
-                    { "skill": "Vue.js"},
-                    { "skill": "Frotend Developer"}
-                ]
+                    {"skill": "Vue.js"},
+                    {"skill": "Frotend Developer"}
+                ],
+                showAlert: true,
+                showClass: true
             }
         }
     }
@@ -25,5 +28,14 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .alert {
+        background-color: yellow;
+        width: 100%;
+        height: 30px;
+    }
+
+    .another-class {
+        border: 5px solid black;
+    }
 
 </style>
