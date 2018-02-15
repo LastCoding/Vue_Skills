@@ -5,7 +5,7 @@
                 <li v-for="(data, index) in skills" :key="index">{{ index }}. {{ data.skill }}</li>
             </ul>
 
-            <div v-bind:class="alertObject"></div>
+            <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight}"></div>
         </div>
     </div>
 </template>
@@ -19,9 +19,9 @@
                     {"skill": "Vue.js"},
                     {"skill": "Frotend Developer"}
                 ],
-                alertObject: {
-                    alert: true,
-                }
+                bgColor: 'yellow',
+                bgWidth: '100%',
+                bgHeight: '30px'
             }
         }
     }
