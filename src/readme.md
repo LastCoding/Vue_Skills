@@ -1,1 +1,1 @@
-#Ein neues WP-Theme
+#Remembering Git Uses
