@@ -26,5 +26,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style src="./Skills.css" scoped>
-
+body {
+    background-color: gray;
+}
 </style>
